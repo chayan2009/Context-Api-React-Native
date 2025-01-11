@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { Component } from 'react'
+import { Text, View } from 'react-native'
 
-export default function profileScreen() {
-  return (
-    <View>
-      <Text>profileScreen</Text>
-    </View>
-  )
+export class profileScreen extends Component {
+  render() {
+    return (
+      <View>
+        <Text> textInComponent </Text>
+      </View>
+    )
+  }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const styles = StyleSheet.create({})
+export default profileScreen

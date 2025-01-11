@@ -17,7 +17,6 @@
     "react-native": "0.76.5",
     "react-native-gesture-handler": "^2.21.2",
     "react-native-get-random-values": "^1.11.0",
-    "react-native-ionicons": "^4.6.5",
     "react-native-reanimated": "^3.16.6",
     "react-native-safe-area-context": "^5.1.0",
     "react-native-screens": "^4.4.0",
