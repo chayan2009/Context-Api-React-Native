@@ -16,7 +16,10 @@ const CourseCard: React.FC<CourseCardProps> = ({ title, price, rating }) => {
     throw new Error('CourseCard must be used within a CartProvider');
   }
 
-  const { addToCart } = cartContext;
+  const { addToCart, removeFromCart, cartItems } = cartContext;
+
+  // Check if the item is in the cart
+  const isItemInCart = cartItems.includes(title);
 
   return (
     <View style={styles.card}>
@@ -27,9 +30,17 @@ const CourseCard: React.FC<CourseCardProps> = ({ title, price, rating }) => {
           <MaterialCommunityIcons name="star" size={16} color="#f1c40f" />
           <Text style={styles.rating}>{rating}</Text>
         </View>
-        <TouchableOpacity style={styles.button} onPress={addToCart}>
-          <Text style={styles.buttonText}>Add to Cart</Text>
-        </TouchableOpacity>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity
+            style={styles.iconButton}
+            onPress={() => isItemInCart ? removeFromCart(title) : addToCart(title)}>
+            <MaterialCommunityIcons
+              name={isItemInCart ? 'minus' : 'plus'}
+              size={24}
+              color="#fff"
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -42,7 +53,7 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderRadius: 8,
     padding: 10,
-    margin: 8, // Consistent spacing around the card
+    margin: 8,
     backgroundColor: '#fff',
     justifyContent: 'space-between',
     shadowColor: '#000',
@@ -77,15 +88,15 @@ const styles = StyleSheet.create({
     color: '#f39c12',
     marginLeft: 5,
   },
-  button: {
-    backgroundColor: '#3498db',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 5,
+  buttonContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
+  iconButton: {
+    backgroundColor: '#3498db',
+    padding: 8,
+    borderRadius: 50,
+    marginLeft: 10,
   },
 });
 
