@@ -14,7 +14,7 @@ export const categories = [
     { id: 5, categoryId: 3, name: 'Milk', price: 3.49, desc: 'Fresh cow\'s milk, a great source of calcium.' },
     { id: 6, categoryId: 3, name: 'Cheese', price: 5.99, desc: 'Creamy and rich cheese, perfect for sandwiches and salads.' },
     { id: 7, categoryId: 4, name: 'Chicken', price: 7.99, desc: 'Tender chicken breasts, ideal for grilling or roasting.' },
-    { id: 8, categoryId: 5, name: 'Orange Juice', price: 4.99, desc: 'Freshly squeezed orange juice, a refreshing start to your day.' },
-  ];
+    { id: 8, categoryId: 5, name: 'Orange Juice', price: 4.99, desc: 'Freshly squeezed orange juice, a refreshing start to your day.' }
+    ];
   
   
